@@ -3,6 +3,13 @@ variable "aws_region" {
   description = "AWS region where Vault is being deployed"
 }
 
+variable "aws_profile" {
+  type        = string
+  description = "AWS profile if defined"
+  default     = null
+}
+
+
 variable "kms_key_arn" {
   type        = string
   description = "KMS Key ARN used for Vault auto-unseal"

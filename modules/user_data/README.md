@@ -9,6 +9,10 @@
 * `secrets_manager_arn` - Secrets manager ARN where TLS cert info is stored
 * `vault_version` - Vault version
 
+## optional variables (added from odusseos2024)
+
+* `aws_profile` - AWS region if defined
+
 ## Example usage
 
 ```hcl
@@ -16,6 +20,7 @@ module "user_data" {
   source = "./modules/user_data"
 
   aws_region               = data.aws_region.current.name
+  profile                  = var.aws_profile
   kms_key_arn              = var.kms_key_arn
   leader_tls_servername    = var.leader_tls_servername
   resource_name_prefix     = var.resource_name_prefix
