@@ -3,6 +3,7 @@ locals {
     var.user_supplied_userdata_path != null ? var.user_supplied_userdata_path : "${path.module}/templates/install_vault.sh.tpl",
     {
       region                = var.aws_region
+      profile               = var.aws_profile
       name                  = var.resource_name_prefix
       vault_version         = var.vault_version
       kms_key_arn           = var.kms_key_arn

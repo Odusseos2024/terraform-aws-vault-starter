@@ -25,7 +25,11 @@ touch /opt/vault/tls/vault-key.pem
 chown root:vault /opt/vault/tls/vault-key.pem
 chmod 0640 /opt/vault/tls/vault-key.pem
 
-secret_result=$(aws secretsmanager get-secret-value --secret-id ${secrets_manager_arn} --region ${region} --output text --query SecretString)
+if [ -z $profile ]; then
+  secret_result=$(aws secretsmanager get-secret-value --secret-id ${secrets_manager_arn} --region ${region} --output text --query SecretString)
+else
+  secret_result=$(aws secretsmanager get-secret-value --secret-id ${secrets_manager_arn} --region ${region} --profile ${profile} --output text --query SecretString)
+fi
 
 jq -r .vault_cert <<< "$secret_result" | base64 -d > /opt/vault/tls/vault-cert.pem
 
