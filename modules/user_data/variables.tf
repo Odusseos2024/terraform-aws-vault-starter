@@ -5,10 +5,8 @@ variable "aws_region" {
 
 variable "aws_profile" {
   type        = string
-  description = "AWS profile if defined"
-  default     = null
+  description = "AWS profile"
 }
-
 
 variable "kms_key_arn" {
   type        = string

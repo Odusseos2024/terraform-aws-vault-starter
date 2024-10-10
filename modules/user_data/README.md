@@ -11,7 +11,7 @@
 
 ## optional variables (added from odusseos2024)
 
-* `aws_profile` - AWS region if defined
+* `aws_profile` - AWS profile
 
 ## Example usage
 
