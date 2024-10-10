@@ -1,3 +1,8 @@
+variable "aws_profile" {
+  type        = string
+  description = "AWS profile for SSO"
+}
+
 variable "allowed_inbound_cidrs_lb" {
   type        = list(string)
   description = "(Optional) List of CIDR blocks to permit inbound traffic from to load balancer"
