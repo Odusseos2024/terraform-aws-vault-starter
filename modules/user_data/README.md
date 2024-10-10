@@ -9,7 +9,7 @@
 * `secrets_manager_arn` - Secrets manager ARN where TLS cert info is stored
 * `vault_version` - Vault version
 
-## optional variables (added from odusseos2024)
+## Optional variables (added by odusseos2024)
 
 * `aws_profile` - AWS profile
 
